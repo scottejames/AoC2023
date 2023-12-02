@@ -51,7 +51,7 @@ public class Day1 extends AbstractDay {
                     char first = firstInt(line);
                     char last = lastInt(line);
                     String sum = "" + first + last;
-                     System.out.println(first + " + " + last + " = " + sum);
+            //         System.out.println(first + " + " + last + " = " + sum);
                     return Integer.parseInt(sum);
                 }).sum();
         return value +"";
