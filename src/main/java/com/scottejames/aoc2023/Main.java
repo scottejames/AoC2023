@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String [] args) throws IOException {
-        AbstractDay day = new Day3();
+        AbstractDay day = new Day6();
 
         String solnOne = day.solvePart1();
         String solnTwo = day.solvePart2();

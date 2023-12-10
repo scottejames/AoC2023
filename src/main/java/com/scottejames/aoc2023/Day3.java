@@ -76,7 +76,7 @@ public class Day3 extends AbstractDay {
         for (Point s: stars){
             Set<Point> digits = getSurroundingDigitsStart(s);
             if (digits.size() == 2) {
-                System.out.println(digits);
+               // System.out.println(digits);
 
                 Iterator<Point> i = digits.iterator();
                 int x = getDigit(i.next());
@@ -108,17 +108,7 @@ public class Day3 extends AbstractDay {
 
         return results;
     }
-    private Set<Point> getSurroundingDigits(Point p){
-        Set<Point> result = new HashSet<>();
-        Set<Point> neighbours = p.getNeighbours();
-        for (Point n : neighbours){
-            if (grid.withinGrid(n)) {
-                if (Character.isDigit(grid.get(n)))
-                    result.add(startOfDigit(n));
-            }
-        }
-        return result;
-    }
+
     private Point startOfDigit(Point p){
         Point result = new Point(p);
         while (grid.withinGrid(result) && Character.isDigit(grid.get(result))){

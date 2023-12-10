@@ -30,18 +30,12 @@ public class ArrayHelper {
 
     };
 
-    public static int[][] convertToArrayOfIntArrays(final List<String> input) {
-        final int outerLength = input.size();
-        final int innerLength = input.get(0).length();
-
-        final int[][] arrayOfIntArrays = new int[outerLength][innerLength];
-
-        for (int i = 0; i < input.size(); i++) {
-            final String line = input.get(i);
-            arrayOfIntArrays[i] = convertToArrayOfInts(line);
+    public static int[] convertToIntArray(String [] input){
+        int [] result = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+            result[i] = Integer.parseInt(input[i]);
         }
-
-        return arrayOfIntArrays;
+        return result;
     }
     private static int[] convertToArrayOfInts(final CharSequence input) {
         final int[] intArray = new int[input.length()];
@@ -49,5 +43,23 @@ public class ArrayHelper {
             intArray[i] = Integer.parseInt(String.valueOf(input.charAt(i)));
         }
         return intArray;
+    }
+
+    public static void printArray(int[] array){
+        for (int s : array) {
+            System.out.println(s);
+        }
+    }
+    public static int[] intersection(int [] a, int []b){
+        List<Integer> result = new ArrayList<>();
+        for (int i : a) {
+            for (int j : b) {
+                if (i == j) {
+                    result.add(i);
+                }
+            }
+        }
+        return result.stream().mapToInt(i->i).toArray();
+
     }
 }

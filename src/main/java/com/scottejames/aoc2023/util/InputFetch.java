@@ -76,7 +76,7 @@ public class InputFetch {
     synchronized String  getSessionToken() throws IOException {
         try {
             if (_sessionToken == null) {
-                _sessionToken = Files.readString(Path.of("src/main/cookie.txt")).trim();
+                _sessionToken = Files.readString(Path.of("src/main/cookie-google.txt")).trim();
             }
             return _sessionToken;
         } catch (IOException e) {
