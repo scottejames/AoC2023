@@ -49,6 +49,8 @@ public class Day6 extends AbstractDay {
     }
     @Override
     public String solvePart2() {
+        // CBA to parse IP data
+
         long count = 49979494;
         long record = 263153213781851L;
 
