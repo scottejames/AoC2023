@@ -65,6 +65,17 @@ public class Point {
     public int manHattenDistance(){
         return Math.abs(x) + Math.abs(y);
     }
+
+    public Point move(Direction d){
+        Point result = new Point(this);
+        switch (d){
+            case UP -> result.y--;
+            case DOWN -> result.y++;
+            case LEFT -> result.x--;
+            case RIGHT -> result.x++;
+        }
+        return result;
+    }
     @Override
     public String toString() {
         return "Point{" +
